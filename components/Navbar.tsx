@@ -16,22 +16,7 @@ const NAV_ITEMS = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
-  const isHome = pathname === "/";
-
-  // Handle scroll detection for glassmorphism navbar effect
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 40) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   // Close mobile menu when route changes
   useEffect(() => {
@@ -40,30 +25,16 @@ export default function Navbar() {
 
   return (
     <>
-      {/* MAIN NAVBAR WRAPPER (Absolute full-width on Home-unscrolled, sticky elsewhere) */}
-      <div
-        className={cn(
-          "transition-all duration-300",
-          isHome && !isScrolled
-            ? "absolute top-0 left-0 w-full z-40 bg-transparent border-b border-white/10"
-            : "sticky top-0 z-40 w-full bg-[#fcfcfc]/95 backdrop-blur-md shadow-sm border-b border-neutral-200"
-        )}
-      >
+      {/* MAIN NAVBAR WRAPPER — always solid white sticky */}
+      <div className="sticky top-0 z-40 w-full bg-[#fcfcfc] shadow-sm border-b border-neutral-200">
         {/* 1. TOP INFORMATION BAR */}
-        <div
-          className={cn(
-            "w-full text-xs py-2 px-4 sm:px-6 md:px-8 border-b transition-colors duration-300",
-            isHome && !isScrolled
-              ? "bg-transparent border-white/10 text-neutral-300"
-              : "bg-[#212120] border-neutral-800 text-[#fcfcfc]"
-          )}
-        >
+        <div className="w-full text-xs py-2 px-4 sm:px-6 md:px-8 border-b bg-[#212120] border-neutral-800 text-[#fcfcfc] transition-colors duration-300">
           <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
             {/* Left Info: GST & Trust Indicator */}
             <div className="flex items-center gap-4">
               <span className="flex items-center gap-1.5 font-mono">
                 <Award className="h-3.5 w-3.5 text-[#de0311]" />
-                GSTIN: <span className={isHome && !isScrolled ? "text-neutral-200" : "text-neutral-300 "}>18AISPD0403G1ZL</span>
+                GSTIN: <span className="text-neutral-300">18AISPD0403G1ZL</span>
               </span>
             </div>
 
@@ -71,20 +42,14 @@ export default function Navbar() {
             <div className="flex items-center flex-wrap justify-center gap-x-6 gap-y-1">
               <a
                 href="mailto:andcarriers@gmail.com"
-                className={cn(
-                  "flex items-center gap-1.5 transition-colors",
-                  isHome && !isScrolled ? "text-neutral-400 hover:text-white" : "text-neutral-400 hover:text-white"
-                )}
+                className="flex items-center gap-1.5 text-neutral-400 hover:text-white transition-colors"
               >
                 <Mail className="h-3.5 w-3.5" />
                 <span>andcarriers@gmail.com</span>
               </a>
               <a
                 href="tel:+919435346000"
-                className={cn(
-                  "flex items-center gap-1.5 transition-colors font-medium",
-                  isHome && !isScrolled ? "text-neutral-300 hover:text-white" : "text-[#fcfcfc] hover:text-[#de0311]"
-                )}
+                className="flex items-center gap-1.5 text-[#fcfcfc] hover:text-[#de0311] transition-colors font-medium"
               >
                 <Phone className="h-3.5 w-3.5 text-[#de0311]" />
                 <span>+91 94353 46000</span>
@@ -94,12 +59,7 @@ export default function Navbar() {
         </div>
 
         {/* 2. MAIN NAVIGATION HEADER */}
-        <header
-          className={cn(
-            "w-full transition-all duration-300",
-            isHome && !isScrolled ? "py-4" : isScrolled ? "py-3" : "py-4"
-          )}
-        >
+        <header className="w-full py-3">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 flex items-center justify-between">
             {/* Brand Logo */}
             <Link href="/" className="group flex items-center">
@@ -123,18 +83,13 @@ export default function Navbar() {
                     href={item.href}
                     className={cn(
                       "relative text-sm font-medium transition-colors py-1.5",
-                      isHome && !isScrolled
-                        ? isActive
-                          ? "bg-white text-[#4e0c10] px-4 py-1.5 rounded-full "
-                          : "text-white/80 hover:text-white"
-                        : isActive
-                          ? "text-[#de0311]"
-                          : "text-neutral-600 hover:text-[#de0311]"
+                      isActive
+                        ? "text-[#de0311]"
+                        : "text-neutral-600 hover:text-[#de0311]"
                     )}
                   >
                     {item.label}
-                    {/* Underline for active page (only in sticky mode) */}
-                    {isActive && !(isHome && !isScrolled) && (
+                    {isActive && (
                       <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#de0311] rounded-full" />
                     )}
                   </Link>
@@ -155,10 +110,7 @@ export default function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={cn(
-                "md:hidden p-2 rounded-md transition-colors focus:outline-none",
-                isHome && !isScrolled ? "text-white hover:bg-white/10" : "text-[#212120] hover:bg-neutral-100"
-              )}
+              className="md:hidden p-2 rounded-md text-[#212120] hover:bg-neutral-100 transition-colors focus:outline-none"
               aria-label="Toggle menu"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}

@@ -30,7 +30,7 @@ export default function Hero() {
       </div>
 
       {/* ── Content ──────────────────────────────────────── */}
-      <div className="relative z-20 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 w-full pt-36 pb-28 sm:pt-44 sm:pb-32 lg:pt-52 lg:pb-40">
+      <div className="relative z-20 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 w-full pt-16 pb-28 sm:pt-20 sm:pb-32 lg:pt-24 lg:pb-40">
         <div className="max-w-2xl flex flex-col gap-6 animate-fade-in-up">
 
           {/* Eyebrow */}
