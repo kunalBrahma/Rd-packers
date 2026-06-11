@@ -7,8 +7,8 @@ import { Phone, ArrowUpRight, ShieldCheck, Clock, MapPin } from "lucide-react";
 
 const TRUST_STATS = [
   { icon: ShieldCheck, label: "Insured Shifting", value: "100%" },
-  { icon: Clock,       label: "Years of Service", value: "10+" },
-  { icon: MapPin,      label: "Cities Covered",   value: "50+" },
+  { icon: Clock, label: "Years of Service", value: "10+" },
+  { icon: MapPin, label: "Cities Covered", value: "50+" },
 ];
 
 export default function Hero() {
@@ -58,7 +58,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-2">
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-2 text-sm font-semibold px-6 py-3.5 bg-[#de0311] text-white rounded-lg hover:bg-[#c00210] transition-all duration-300 shadow-lg shadow-[#de0311]/25"
+              className="group inline-flex items-center gap-2 text-sm  px-6 py-3.5 bg-[#de0311] text-white rounded-lg hover:bg-[#c00210] transition-all duration-300 shadow-lg shadow-[#de0311]/25"
             >
               Get a Free Quote
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

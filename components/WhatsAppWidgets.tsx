@@ -40,7 +40,7 @@ export default function WhatsAppWidgets() {
         {/* Call Helpline Button */}
         <a
           href="tel:+919435346000"
-          className="flex-1 flex items-center justify-center gap-2 py-3 bg-[#de0311] hover:bg-[#de0311]/90 text-white text-xs font-semibold uppercase tracking-wider rounded-xl transition-all duration-300 shadow-sm cursor-pointer"
+          className="flex-1 flex items-center justify-center gap-2 py-3 bg-[#de0311] hover:bg-[#de0311]/90 text-white text-xs  uppercase tracking-wider rounded-xl transition-all duration-300 shadow-sm cursor-pointer"
         >
           <Phone className="h-4 w-4" />
           <span>Call Helpline</span>
@@ -51,7 +51,7 @@ export default function WhatsAppWidgets() {
           href="https://wa.me/919706290723"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 flex items-center justify-center gap-2 py-3 bg-[#212120] hover:bg-neutral-800 text-white text-xs font-semibold uppercase tracking-wider rounded-xl transition-all duration-300 shadow-sm cursor-pointer"
+          className="flex-1 flex items-center justify-center gap-2 py-3 bg-[#212120] hover:bg-neutral-800 text-white text-xs  uppercase tracking-wider rounded-xl transition-all duration-300 shadow-sm cursor-pointer"
         >
           <FaWhatsapp className="h-4.5 w-4.5" />
           <span>WhatsApp Chat</span>

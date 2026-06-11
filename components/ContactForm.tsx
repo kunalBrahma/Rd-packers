@@ -67,7 +67,7 @@ export default function ContactForm() {
       <div className="space-y-4">
         {/* Name */}
         <div>
-          <label htmlFor="name" className="block text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-1.5">
+          <label htmlFor="name" className="block text-xs  text-neutral-500 uppercase tracking-wider mb-1.5">
             Your Name *
           </label>
           <input
@@ -84,7 +84,7 @@ export default function ContactForm() {
 
         {/* Phone */}
         <div>
-          <label htmlFor="phone" className="block text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-1.5">
+          <label htmlFor="phone" className="block text-xs  text-neutral-500 uppercase tracking-wider mb-1.5">
             Phone Number *
           </label>
           <input
@@ -101,7 +101,7 @@ export default function ContactForm() {
 
         {/* Service dropdown */}
         <div>
-          <label htmlFor="service" className="block text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-1.5">
+          <label htmlFor="service" className="block text-xs  text-neutral-500 uppercase tracking-wider mb-1.5">
             Service Required *
           </label>
           <div className="relative">
@@ -133,7 +133,7 @@ export default function ContactForm() {
         {/* From / To row */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label htmlFor="movingFrom" className="block text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-1.5">
+            <label htmlFor="movingFrom" className="block text-xs  text-neutral-500 uppercase tracking-wider mb-1.5">
               Moving From *
             </label>
             <input
@@ -149,7 +149,7 @@ export default function ContactForm() {
           </div>
 
           <div>
-            <label htmlFor="movingTo" className="block text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-1.5">
+            <label htmlFor="movingTo" className="block text-xs  text-neutral-500 uppercase tracking-wider mb-1.5">
               Moving To *
             </label>
             <input
@@ -167,7 +167,7 @@ export default function ContactForm() {
 
         {/* Move Date */}
         <div>
-          <label htmlFor="moveDate" className="block text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-1.5">
+          <label htmlFor="moveDate" className="block text-xs  text-neutral-500 uppercase tracking-wider mb-1.5">
             Preferred Move Date *
           </label>
           <input
@@ -183,7 +183,7 @@ export default function ContactForm() {
 
         {/* Message */}
         <div>
-          <label htmlFor="message" className="block text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-1.5">
+          <label htmlFor="message" className="block text-xs  text-neutral-500 uppercase tracking-wider mb-1.5">
             Additional Message (Optional)
           </label>
           <textarea
@@ -200,7 +200,7 @@ export default function ContactForm() {
         {/* Submit */}
         <button
           type="submit"
-          className="w-full inline-flex items-center justify-center gap-2 py-3 bg-[#de0311] hover:bg-[#de0311]/90 text-white text-xs font-semibold uppercase tracking-wider rounded-xl shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer mt-2"
+          className="w-full inline-flex items-center justify-center gap-2 py-3 bg-[#de0311] hover:bg-[#de0311]/90 text-white text-xs  uppercase tracking-wider rounded-xl shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer mt-2"
         >
           <span>Send Booking via WhatsApp</span>
           <FaWhatsapp className="h-4 w-4" />

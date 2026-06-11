@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "@/components/Hero";
 import Estimator from "@/components/Estimator";
+import Clients from "@/components/Clients";
 import ServicesBento from "@/components/ServicesBento";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Process from "@/components/Process";
@@ -71,6 +72,9 @@ export default function Home() {
       
       {/* 2. Floating Estimator Form Widget */}
       <Estimator />
+
+      {/* 2.5. Corporate Clients Logo Marquee Section */}
+      <Clients />
 
       {/* 3. Services Bento Grid Section */}
       <ServicesBento />
