@@ -94,7 +94,7 @@ const SERVICES_DATA = [
       "Two-Wheeler Shifting",
       "Four-Wheeler Relocation"
     ],
-    image: "/gallery/image-17.jpeg",
+    image: "/gallery/vehicle-2.jpg",
     whatsappMsg: "Vehicle Transport Shifting",
   },
   {
@@ -109,7 +109,7 @@ const SERVICES_DATA = [
       "Secure Warehouse Solutions",
       "Climate-Controlled Storage (if available)"
     ],
-    image: "/gallery/image-12.jpeg",
+    image: "/gallery/warehouse.png",
     whatsappMsg: "Storage & Warehousing Solution",
   },
   {

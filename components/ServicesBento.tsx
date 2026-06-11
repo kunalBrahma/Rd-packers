@@ -32,7 +32,7 @@ const SERVICES_DATA = [
     items: ["Car Transportation", "Bike Shifting", "Four-Wheeler Relocation"],
     icon: Car,
     gridClass: "lg:col-span-1 lg:row-span-1 bg-neutral-50/30 hover:bg-neutral-50/50",
-    bgImage: "/gallery/image-17.jpeg",
+    bgImage: "/gallery/vehicle-2.jpg",
   },
   {
     id: 4,
@@ -50,7 +50,7 @@ const SERVICES_DATA = [
     items: ["Household Storage", "Secure Warehousing", "Short-Term Lockers"],
     icon: Database,
     gridClass: "lg:col-span-1 lg:row-span-1 bg-neutral-50/30 hover:bg-neutral-50/50",
-    bgImage: "/gallery/image-12.jpeg",
+    bgImage: "/gallery/warehouse.png",
   },
   {
     id: 6,
@@ -93,21 +93,27 @@ export default function ServicesBento() {
               <div
                 key={service.id}
                 className={cn(
-                  "group relative rounded-2xl border border-neutral-200/60 p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:shadow-md hover:border-neutral-300/80 overflow-hidden",
-                  service.gridClass
+                  "group relative rounded-2xl border p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:shadow-lg overflow-hidden",
+                  isHousehold
+                    ? "lg:col-span-2 lg:row-span-2 bg-neutral-50/50 hover:bg-neutral-50 border-neutral-200/60 hover:border-neutral-300/80"
+                    : "lg:col-span-1 lg:row-span-1 bg-neutral-900 border-neutral-800 text-white"
                 )}
               >
-                {/* Visual hover background image for standard cards */}
+                {/* Visual background image for standard cards */}
                 {!isHousehold && service.bgImage && (
-                  <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-[0.07] transition-opacity duration-500 pointer-events-none select-none">
-                    <Image
-                      src={service.bgImage}
-                      alt={service.title}
-                      fill
-                      sizes="300px"
-                      className="object-cover object-center"
-                    />
-                  </div>
+                  <>
+                    <div className="absolute inset-0 z-0 opacity-80 group-hover:opacity-95 transition-opacity duration-500 pointer-events-none select-none">
+                      <Image
+                        src={service.bgImage}
+                        alt={service.title}
+                        fill
+                        sizes="300px"
+                        className="object-cover object-center transition-transform duration-700 ease-in-out group-hover:scale-105"
+                      />
+                    </div>
+                    {/* Dark gradient overlay to ensure high contrast text readability */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/65 to-black/85 z-0 pointer-events-none group-hover:via-black/50 group-hover:to-black/75 transition-colors duration-500" />
+                  </>
                 )}
 
                 {isHousehold ? (
@@ -157,7 +163,7 @@ export default function ServicesBento() {
                     </div>
                   </div>
                 ) : (
-                  /* Standard Card Layout */
+                  /* Standard Card Layout with Dark Contrast Styling */
                   <div className="flex flex-col justify-between h-full w-full z-10">
                     <div>
                       <div className="flex items-center justify-between mb-4">
@@ -166,17 +172,17 @@ export default function ServicesBento() {
                         </div>
                       </div>
 
-                      <h3 className="text-lg sm:text-xl  text-[#212120] mb-2">{service.title}</h3>
-                      <p className="text-xs sm:text-sm text-neutral-500 leading-relaxed max-w-md line-clamp-3">
+                      <h3 className="text-lg sm:text-xl text-white mb-2 font-bold drop-shadow-sm">{service.title}</h3>
+                      <p className="text-xs sm:text-sm text-neutral-200 leading-relaxed max-w-md line-clamp-3 drop-shadow-sm">
                         {service.description}
                       </p>
                     </div>
 
                     <div className="mt-4">
-                      <ul className="flex flex-wrap gap-x-4 gap-y-1.5 mb-4 text-[11px] font-mono text-[#212120]/75">
+                      <ul className="flex flex-wrap gap-x-4 gap-y-1.5 mb-4 text-[11px] font-mono text-neutral-100/90 drop-shadow-sm">
                         {service.items.map((item, idx) => (
                           <li key={idx} className="flex items-center gap-1">
-                            <span className="h-1 w-1 bg-[#de0311] rounded-full"></span>
+                            <span className="h-1.5 w-1.5 bg-[#de0311] rounded-full"></span>
                             <span>{item}</span>
                           </li>
                         ))}
@@ -184,7 +190,7 @@ export default function ServicesBento() {
 
                       <Link
                         href="/contact"
-                        className="inline-flex items-center gap-1 text-xs  text-[#de0311] group-hover:translate-x-0.5 transition-transform duration-300"
+                        className="inline-flex items-center gap-1.5 text-xs text-white bg-[#de0311] hover:bg-[#c00210] px-4 py-2 rounded-lg transition-all duration-300 font-semibold shadow-sm w-fit"
                       >
                         <span>Request Service</span>
                         <ChevronRight className="h-3.5 w-3.5" />

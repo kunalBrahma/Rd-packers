@@ -118,11 +118,32 @@ const GALLERY_IMAGES = [
     description: "Well-maintained trucks of various capacities for local & intercity relocations."
   },
   {
-    src: "/gallery/image-17.jpeg",
-    alt: "Vehicle carrier transportation",
+    src: "/gallery/vehicle-1.jpg",
+    alt: "Preparing Mahindra Bolero SUV for carrier loading",
     category: "Transportation",
-    title: "Car Transportation",
-    description: "Securing four-wheelers onto car carrier ramps for long-distance hauls."
+    title: "Vehicle Carrier Loading",
+    description: "Positioning the customer's SUV safely behind our customized closed-container car carrier truck."
+  },
+  {
+    src: "/gallery/vehicle-2.jpg",
+    alt: "Driving Bolero SUV onto container carrier ramp",
+    category: "Transportation",
+    title: "Safe Carrier Ramp Entry",
+    description: "Carefully driving the vehicle onto the heavy-duty loading ramp into the container."
+  },
+  {
+    src: "/gallery/vehicle-3.jpg",
+    alt: "Mahindra Bolero secured inside car carrier container",
+    category: "Transportation",
+    title: "Secured Vehicle Transit",
+    description: "Tire-strapped and tightly anchored vehicle inside the container for scratch-free relocation."
+  },
+  {
+    src: "/gallery/warehouse.png",
+    alt: "Secure storage and warehousing facility interior",
+    category: "Storage",
+    title: "Storage & Warehousing",
+    description: "Clean, CCTV-monitored, and spacious storage warehouse for short or long-term household/commercial goods storage."
   },
   {
     src: "/gallery/image-18.jpeg",
@@ -140,7 +161,7 @@ const GALLERY_IMAGES = [
   }
 ];
 
-const CATEGORIES = ["All", "Packing", "Loading", "Transportation", "Office Shifting"];
+const CATEGORIES = ["All", "Packing", "Loading", "Transportation", "Office Shifting", "Storage"];
 
 export default function Gallery() {
   const [activeFilter, setActiveFilter] = useState("All");
