@@ -26,7 +26,7 @@ export default function Footer() {
             </Link>
             <p className="text-xs sm:text-sm text-neutral-500 leading-relaxed max-w-sm mt-2">
               RD Packers And Carriers is your trusted logistics partner for safe, secure, and hassle-free relocation.
-              We specialize in home shifting, commercial moving, and vehicle transport.
+              We specialize in home shifting, commercial moving, loading & unloading, and vehicle transport.
             </p>
             {/* GST Verification */}
             <div className="flex items-center gap-2 mt-2 bg-white px-3 py-1.5 rounded-lg border border-neutral-200/60 w-fit">
@@ -50,6 +50,9 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/services" className="hover:text-[#de0311] transition-colors">Packing & Unpacking</Link>
+              </li>
+              <li>
+                <Link href="/services" className="hover:text-[#de0311] transition-colors">Loading & Unloading</Link>
               </li>
               <li>
                 <Link href="/services" className="hover:text-[#de0311] transition-colors">Storage Solutions</Link>
