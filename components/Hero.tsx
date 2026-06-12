@@ -13,7 +13,7 @@ const TRUST_STATS = [
 
 export default function Hero() {
   return (
-    <section className="relative w-full bg-neutral-50 overflow-hidden flex items-center min-h-[92vh]">
+    <section className="relative w-full bg-[#fcfcfc] overflow-hidden flex items-center min-h-[92vh]">
 
       {/* ── Background Image ─────────────────────────────── */}
       <div className="absolute inset-0 z-0">
@@ -28,19 +28,21 @@ export default function Hero() {
       </div>
 
       {/* ── Content ──────────────────────────────────────── */}
-      <div className="relative z-20 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 w-full pt-16 pb-28 sm:pt-20 sm:pb-32 lg:pt-24 lg:pb-40">
-        <div className="max-w-2xl flex flex-col gap-6 animate-fade-in-up">
-
+      <div className="relative z-20 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 w-full pt-16 pb-28 sm:pt-20 sm:pb-32 lg:pt-24 lg:pb-40 flex flex-col gap-6 items-start">
+        
+        {/* Main Glass Content Card */}
+        <div className="max-w-xl flex flex-col gap-6 animate-fade-in-up p-8 sm:p-10 rounded-[2rem] border border-white/30 bg-white/35 backdrop-blur-lg shadow-2xl shadow-neutral-900/5">
+          
           {/* Eyebrow */}
           <div className="flex items-center gap-3">
             <span className="block h-px w-8 bg-[#de0311]" />
-            <span className="text-[10px] uppercase tracking-[0.22em] text-[#de0311] font-mono font-semibold">
+            <span className="text-[10px] uppercase tracking-[0.22em] text-[#de0311] font-mono font-bold">
               Trusted Packers &amp; Movers · Guwahati
             </span>
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-[3.6rem] text-[#212120] font-bold tracking-tight leading-[1.12]">
+          <h1 className="text-4xl sm:text-5xl lg:text-[3.2rem] text-neutral-900 font-extrabold tracking-tight leading-[1.12]">
             We Move Your World<br />
             <span className="text-[#de0311]">Safely &amp; On Time.</span>
           </h1>
@@ -53,10 +55,10 @@ export default function Hero() {
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-2">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-2 text-sm px-6 py-3.5 bg-[#de0311] text-white rounded-lg hover:bg-[#c00210] transition-all duration-300 shadow-lg shadow-[#de0311]/25"
+              className="group inline-flex items-center justify-center gap-2 text-sm px-6 py-3.5 bg-[#de0311] text-white rounded-xl hover:bg-[#c00210] transition-all duration-300 shadow-lg shadow-[#de0311]/25 font-semibold"
             >
               Get a Free Quote
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -64,30 +66,31 @@ export default function Hero() {
 
             <a
               href="tel:+919435346000"
-              className="group flex items-center gap-3 text-[#212120] hover:text-[#de0311] transition-colors duration-300"
+              className="group flex items-center justify-center sm:justify-start gap-3 text-neutral-800 hover:text-[#de0311] transition-colors duration-300"
             >
-              <div className="flex items-center justify-center h-11 w-11 rounded-full bg-neutral-100 border border-neutral-200 group-hover:bg-[#de0311]/10 group-hover:border-[#de0311]/30 transition-all duration-300">
+              <div className="flex items-center justify-center h-11 w-11 rounded-full bg-white/80 border border-neutral-200 group-hover:bg-[#de0311]/15 group-hover:border-[#de0311]/40 transition-all duration-300 shadow-sm">
                 <Phone className="h-4 w-4 text-[#de0311]" />
               </div>
               <div className="flex flex-col leading-tight">
                 <span className="text-[9px] uppercase tracking-widest text-neutral-500 font-medium">Call Us Now</span>
-                <span className="text-sm font-mono text-[#212120] group-hover:text-[#de0311] transition-colors">+91 94353 46000</span>
+                <span className="text-sm font-mono text-neutral-900 font-bold group-hover:text-[#de0311] transition-colors">+91 94353 46000</span>
               </div>
             </a>
           </div>
 
-          {/* ── Trust Strip ───────────────────────────────── */}
-          <div className="mt-6 grid grid-cols-3 divide-x divide-neutral-200 border border-neutral-200 rounded-xl overflow-hidden bg-white/80 backdrop-blur-sm shadow-sm max-w-lg">
-            {TRUST_STATS.map(({ icon: Icon, label, value }) => (
-              <div key={label} className="flex flex-col items-center gap-1.5 py-4 px-3">
-                <Icon className="h-4 w-4 text-[#de0311]" strokeWidth={2} />
-                <span className="text-lg font-bold text-[#212120] leading-none">{value}</span>
-                <span className="text-[10px] text-neutral-500 text-center leading-snug font-medium">{label}</span>
-              </div>
-            ))}
-          </div>
-
         </div>
+
+        {/* Separate Stats Glass Card */}
+        <div className="w-full max-w-md grid grid-cols-3 divide-x divide-neutral-200/40 border border-white/20 rounded-2xl overflow-hidden bg-white/30 backdrop-blur-lg shadow-xl shadow-neutral-900/5 p-4 animate-fade-in-up">
+          {TRUST_STATS.map(({ icon: Icon, label, value }) => (
+            <div key={label} className="flex flex-col items-center gap-1.5 px-3">
+              <Icon className="h-4 w-4 text-[#de0311]" strokeWidth={2} />
+              <span className="text-lg font-bold text-neutral-900 leading-none">{value}</span>
+              <span className="text-[9px] text-neutral-500 text-center leading-snug font-medium uppercase tracking-wider">{label}</span>
+            </div>
+          ))}
+        </div>
+
       </div>
 
       {/* ── Bottom Diagonal Divider ───────────────────────── */}

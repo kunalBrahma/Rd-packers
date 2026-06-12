@@ -28,12 +28,12 @@ export default function PageHero({ title, description, bgImage }: PageHeroProps)
       )}
 
       {/* 2. Content */}
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full text-center sm:text-left">
-        <div className="max-w-2xl animate-fade-in-up">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl text-neutral-900 tracking-tight leading-tight mb-4 font-heading font-bold">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full">
+        <div className="max-w-2xl animate-fade-in-up p-6 sm:p-10 rounded-[2rem] border border-white/30 bg-white/35 backdrop-blur-lg shadow-2xl shadow-neutral-900/5 text-left">
+          <h1 className="text-3xl sm:text-4xl font-semibold text-neutral-900 tracking-tight leading-tight mb-4 font-heading">
             {title}
           </h1>
-          <p className="text-neutral-600 text-sm sm:text-base leading-relaxed font-medium">
+          <p className="text-neutral-600 text-sm sm:text-base leading-relaxed font-normal">
             {description}
           </p>
         </div>
