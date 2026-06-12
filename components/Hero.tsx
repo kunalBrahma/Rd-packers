@@ -13,7 +13,7 @@ const TRUST_STATS = [
 
 export default function Hero() {
   return (
-    <section className="relative w-full bg-[#1a0305] overflow-hidden flex items-center min-h-[92vh]">
+    <section className="relative w-full bg-neutral-50 overflow-hidden flex items-center min-h-[92vh]">
 
       {/* ── Background Image ─────────────────────────────── */}
       <div className="absolute inset-0 z-0">
@@ -23,10 +23,8 @@ export default function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-right lg:object-center opacity-55 select-none pointer-events-none"
+          className="object-cover object-right lg:object-center opacity-100 select-none pointer-events-none"
         />
-        {/* left-dominant overlay so text reads perfectly */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1a0305]/80 via-[#1a0305]/50 to-[#1a0305]/85 lg:bg-gradient-to-r lg:from-[#1a0305]/90 lg:via-[#1a0305]/55 lg:to-[#1a0305]/10" />
       </div>
 
       {/* ── Content ──────────────────────────────────────── */}
@@ -36,19 +34,19 @@ export default function Hero() {
           {/* Eyebrow */}
           <div className="flex items-center gap-3">
             <span className="block h-px w-8 bg-[#de0311]" />
-            <span className="text-[10px] uppercase tracking-[0.22em] text-[#de0311] font-mono">
+            <span className="text-[10px] uppercase tracking-[0.22em] text-[#de0311] font-mono font-semibold">
               Trusted Packers &amp; Movers · Guwahati
             </span>
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-[3.6rem] text-white font-bold tracking-tight leading-[1.12]">
+          <h1 className="text-4xl sm:text-5xl lg:text-[3.6rem] text-[#212120] font-bold tracking-tight leading-[1.12]">
             We Move Your World<br />
             <span className="text-[#de0311]">Safely &amp; On Time.</span>
           </h1>
 
           {/* Sub-text */}
-          <p className="text-neutral-300 text-sm sm:text-base leading-relaxed max-w-lg">
+          <p className="text-neutral-600 text-sm sm:text-base leading-relaxed max-w-lg font-medium">
             From household relocation to office shifting and vehicle transport —
             RD Packers And Carriers delivers end-to-end moving solutions across
             Guwahati and all of India, with zero hidden charges.
@@ -58,7 +56,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-2">
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-2 text-sm  px-6 py-3.5 bg-[#de0311] text-white rounded-lg hover:bg-[#c00210] transition-all duration-300 shadow-lg shadow-[#de0311]/25"
+              className="group inline-flex items-center gap-2 text-sm px-6 py-3.5 bg-[#de0311] text-white rounded-lg hover:bg-[#c00210] transition-all duration-300 shadow-lg shadow-[#de0311]/25"
             >
               Get a Free Quote
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -66,25 +64,25 @@ export default function Hero() {
 
             <a
               href="tel:+919435346000"
-              className="group flex items-center gap-3 text-white hover:text-[#de0311] transition-colors duration-300"
+              className="group flex items-center gap-3 text-[#212120] hover:text-[#de0311] transition-colors duration-300"
             >
-              <div className="flex items-center justify-center h-11 w-11 rounded-full bg-white/10 border border-white/20 group-hover:bg-[#de0311]/15 group-hover:border-[#de0311]/40 transition-all duration-300">
+              <div className="flex items-center justify-center h-11 w-11 rounded-full bg-neutral-100 border border-neutral-200 group-hover:bg-[#de0311]/10 group-hover:border-[#de0311]/30 transition-all duration-300">
                 <Phone className="h-4 w-4 text-[#de0311]" />
               </div>
               <div className="flex flex-col leading-tight">
-                <span className="text-[9px] uppercase tracking-widest text-neutral-400 font-medium">Call Us Now</span>
-                <span className="text-sm font-mono text-white">+91 94353 46000</span>
+                <span className="text-[9px] uppercase tracking-widest text-neutral-500 font-medium">Call Us Now</span>
+                <span className="text-sm font-mono text-[#212120] group-hover:text-[#de0311] transition-colors">+91 94353 46000</span>
               </div>
             </a>
           </div>
 
           {/* ── Trust Strip ───────────────────────────────── */}
-          <div className="mt-6 grid grid-cols-3 divide-x divide-white/10 border border-white/10 rounded-xl overflow-hidden bg-white/5 backdrop-blur-sm max-w-lg">
+          <div className="mt-6 grid grid-cols-3 divide-x divide-neutral-200 border border-neutral-200 rounded-xl overflow-hidden bg-white/80 backdrop-blur-sm shadow-sm max-w-lg">
             {TRUST_STATS.map(({ icon: Icon, label, value }) => (
               <div key={label} className="flex flex-col items-center gap-1.5 py-4 px-3">
                 <Icon className="h-4 w-4 text-[#de0311]" strokeWidth={2} />
-                <span className="text-lg font-bold text-white leading-none">{value}</span>
-                <span className="text-[10px] text-neutral-400 text-center leading-snug">{label}</span>
+                <span className="text-lg font-bold text-[#212120] leading-none">{value}</span>
+                <span className="text-[10px] text-neutral-500 text-center leading-snug font-medium">{label}</span>
               </div>
             ))}
           </div>

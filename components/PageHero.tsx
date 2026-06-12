@@ -11,7 +11,7 @@ interface PageHeroProps {
 
 export default function PageHero({ title, description, bgImage }: PageHeroProps) {
   return (
-    <section className="relative w-full bg-[#4e0c10] overflow-hidden pt-36 pb-20 sm:pt-40 sm:pb-24 lg:pt-44 lg:pb-28 flex items-center">
+    <section className="relative w-full bg-neutral-50 overflow-hidden pt-36 pb-20 sm:pt-40 sm:pb-24 lg:pt-44 lg:pb-28 flex items-center">
 
       {/* 1. Full-bleed Background Image */}
       {bgImage && (
@@ -22,20 +22,18 @@ export default function PageHero({ title, description, bgImage }: PageHeroProps)
             fill
             priority
             sizes="100vw"
-            className="object-cover object-center opacity-40 select-none pointer-events-none"
+            className="object-cover object-center opacity-100 select-none pointer-events-none"
           />
-          {/* Crimson overlay to ensure text contrast */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#4e0c10]/95 via-[#4e0c10]/80 to-[#4e0c10]/95 z-10" />
         </div>
       )}
 
       {/* 2. Content */}
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full text-center sm:text-left">
         <div className="max-w-2xl animate-fade-in-up">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl  text-white tracking-tight leading-tight mb-4 font-heading">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl text-neutral-900 tracking-tight leading-tight mb-4 font-heading font-bold">
             {title}
           </h1>
-          <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
+          <p className="text-neutral-600 text-sm sm:text-base leading-relaxed font-medium">
             {description}
           </p>
         </div>
