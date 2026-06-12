@@ -62,7 +62,7 @@ export default function Navbar() {
         <header className="w-full py-3">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 flex items-center justify-between">
             {/* Brand Logo */}
-            <Link href="/" className="group flex items-center">
+            <Link href="/" className="group flex items-center gap-3">
               <Image
                 src="/logo.svg"
                 alt="RD Packers And Carriers Logo"
@@ -71,6 +71,9 @@ export default function Navbar() {
                 priority
                 className="h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
+              <span className="font-heading text-lg lg:text-2xl font-bold tracking-tight text-[#212120] group-hover:text-[#de0311] transition-colors duration-300 inline-block leading-tight">
+                RD Packers and Carriers
+              </span>
             </Link>
 
             {/* Desktop Navigation Links */}
@@ -139,7 +142,7 @@ export default function Navbar() {
         <div>
           {/* Header in Drawer */}
           <div className="flex items-center justify-between pb-6 border-b border-neutral-100">
-            <div className="flex items-center">
+            <div className="flex items-center gap-2">
               <Image
                 src="/logo.svg"
                 alt="RD Packers And Carriers Logo"
@@ -147,6 +150,7 @@ export default function Navbar() {
                 height={56}
                 className="h-10 w-auto object-contain"
               />
+
             </div>
             <button
               onClick={() => setIsOpen(false)}
